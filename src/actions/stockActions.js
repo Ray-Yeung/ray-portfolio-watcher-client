@@ -27,3 +27,19 @@ export const deleteStock = stock => ({
   type: DELETE_STOCK,
   stock
 })
+
+
+export const fetchStock = (stock) => {
+  return(dispatch) => {
+    fetch('https://api.iextrading.com/1.0/stock/aapl/quote', {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({stock})
+    })
+    .then(response => response.json())
+    .catch(err => console.log(err))
+  }
+};

@@ -2,7 +2,7 @@ import { ADD_STOCK, DELETE_STOCK } from '../actions/stockActions';
 
 const initialState = {
   stocks: [],
-  showStock: false,
+  value: ''
 }
 
 export const stockReducer = (state=initialState, action) => {

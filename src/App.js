@@ -1,15 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import {connect} from 'react-redux';
 import HomePage from './components/HomePage';
 import Register from './components/auth/register';
 import Login from './components/auth/login/login';
 import { loginUserSuccess } from './actions/authActions';
-import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import MainPage from './components/main/MainPage';
-// import ReactDom from 'react-dom';
-// import Card from 'react-cards';
-
 
 
 class App extends React.Component {

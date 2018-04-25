@@ -56,6 +56,7 @@ export const loginUser = (username, password) => {
       localStorage.setItem('userId', response.userId)
       dispatch(loginUserSuccess(response.userId, response.authToken))
     })
+    .then(json => window.location = '/main')
     .catch(err => console.log(err))
   }
 };
