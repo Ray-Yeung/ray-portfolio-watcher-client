@@ -11,8 +11,12 @@ const Register = ({ dispatch }) => (
       const password = event.target.password.value;
       dispatch(registerUser(username, password));
     }}>
-      <input type="text" name="username"/>
-      <input type="text" name="password"/>
+      <label htmlFor="username">Username</label> <br/>
+      <input type="text" name="username"/> <br/>
+      <br/>
+      <label htmlFor="password">Password</label> <br/>
+      <input type="text" name="password"/> <br/>
+      <br/>
       <button type="submit">Submit</button>
     </form>
   </div>

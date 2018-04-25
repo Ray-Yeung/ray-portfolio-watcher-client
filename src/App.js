@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {connect} from 'react-redux';
 import HomePage from './components/HomePage';
 import Register from './components/auth/register';
 import Login from './components/auth/login/login';
 import { loginUserSuccess } from './actions/authActions';
-import { Router, Route, Redirect, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
+import MainPage from './components/main/MainPage';
+// import ReactDom from 'react-dom';
+// import Card from 'react-cards';
 
 
 
@@ -28,6 +30,7 @@ class App extends React.Component {
             <Route exact path="/" component={HomePage} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/main" component={MainPage} />
           </Switch>
         </div>
       </Router>

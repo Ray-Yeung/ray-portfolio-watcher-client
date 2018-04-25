@@ -1,4 +1,4 @@
-import {LOGIN_USER_SUCCESS} from '../actions/authActions';
+import { LOGIN_USER_SUCCESS, REGISTER_USER_SUCCESS } from '../actions/authActions';
 
 const initialState = {
   loggedIn: false,

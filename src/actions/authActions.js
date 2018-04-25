@@ -1,6 +1,13 @@
 import { API_BASE_URL } from '../config';
 // import history from '../history';
 
+export const REGISTER_USER_SUCCESS = 'REGISTER_USER_SUCCESS';
+export const registerUserSuccess = (userId, token) => ({
+  type: REGISTER_USER_SUCCESS,
+  userId,
+  token
+});
+
 export const LOGIN_USER_SUCCESS = 'LOGIN_USER_SUCCESS';
 export const loginUserSuccess = (userId, token) => ({
   type: LOGIN_USER_SUCCESS,
@@ -10,6 +17,7 @@ export const loginUserSuccess = (userId, token) => ({
 
 
 export const registerUser = (username, password) => {
+  // console.log(password);
   return (dispatch) => {
     fetch(`${API_BASE_URL}/auth/register`, {
       method: 'POST',
@@ -29,6 +37,7 @@ export const registerUser = (username, password) => {
 };
 
 export const loginUser = (username, password) => {
+  console.log(username, password);
   return (dispatch) => {
     fetch(`${API_BASE_URL}/auth/login`, {
       method: 'POST',
