@@ -5,10 +5,10 @@ export const fetchStocksRequest = () => ({
   type: FETCH_STOCKS_REQUEST
 });
 
-export const FETCH_STOCKS_SUCCESS = 'FETCH_STOCKS_SUCCESS';
-export const fetchStocksSuccess = stocks => ({
-  type: FETCH_STOCKS_SUCCESS,
-  stocks
+export const FETCH_STOCK_SUCCESS = 'FETCH_STOCK_SUCCESS';
+export const fetchStockSuccess = stock => ({
+  type: FETCH_STOCK_SUCCESS,
+  stock
 });
 
 export const FETCH_STOCKS_ERROR = 'FETCH_STOCKS_ERROR';
@@ -26,8 +26,19 @@ export const DELETE_STOCK = 'DELETE_STOCK';
 export const deleteStock = stock => ({
   type: DELETE_STOCK,
   stock
-})
+});
 
+export const HANDLE_ONCHANGE = 'HANDLE_ONCHANGE';
+export const handleOnChange = value => ({
+  type: HANDLE_ONCHANGE,
+  value
+});
+
+export const HANDLE_ONCLICK = 'HANDLE_ONCLICK';
+export const handleOnClick = value => ({
+  type: HANDLE_ONCLICK,
+  value
+});
 
 export const fetchStock = (stock) => {
   return(dispatch) => {
@@ -37,9 +48,9 @@ export const fetchStock = (stock) => {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({stock})
     })
     .then(response => response.json())
+    .then(data => dispatch(fetchStockSuccess(data)))
     .catch(err => console.log(err))
   }
 };
