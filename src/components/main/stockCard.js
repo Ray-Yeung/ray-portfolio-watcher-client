@@ -1,26 +1,30 @@
 import React from 'react';
-
 import {connect} from 'react-redux';
-import {fetchStock} from '../../actions/stockActions';
+// import {fetchStock} from '../../actions/stockActions';
 
-export class StockCard extends React.Component {
+class StockCard extends React.Component {
   componentDidMount() {
-    this.props.dispatch(fetchStock())
+    // this.props.dispatch(fetchStock())
   }
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     return (
       <div>
-        Hello
-        {this.props.featuredStock.symbol}
+          <ul>
+            <li>Symbol: {this.props.searchedStock.symbol}</li> <br/>
+            <li>Company: {this.props.searchedStock.companyName}</li> <br/>
+            <li>Opening price: ${this.props.searchedStock.open}</li> <br/>
+            <li>Current price: ${this.props.searchedStock.latestPrice}</li> <br/>
+          </ul>
+          <br/>
+          <button type="submit">Save stock</button>
       </div>
     );
   }
 };
 
-const mapStateToProps = (state) => {
-  console.log(state);
-  return {featuredStock: state.stocks.featuredStock}
-}
+const mapStateToProps = state => ({
+  searchedStock: state.stocks.searchedStock
+});
 
 export default connect(mapStateToProps)(StockCard);

@@ -1,4 +1,5 @@
 import { API_BASE_URL } from '../config';
+// import SearchBar from '../components/main/searchBar';
 
 export const FETCH_STOCKS_REQUEST = 'FETCH_STOCKS_REQUEST';
 export const fetchStocksRequest = () => ({
@@ -42,7 +43,7 @@ export const handleOnClick = value => ({
 
 export const fetchStock = (stock) => {
   return(dispatch) => {
-    fetch('https://api.iextrading.com/1.0/stock/aapl/quote', {
+    fetch(`https://api.iextrading.com/1.0/stock/${stock}/quote`, {
       method: 'GET',
       headers: {
         'Accept': 'application/json',
