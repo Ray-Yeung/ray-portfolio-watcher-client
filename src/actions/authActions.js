@@ -1,4 +1,5 @@
 import { API_BASE_URL } from '../config';
+// import {fetchStock} from './stockActions';
 // import history from '../history';
 
 export const REGISTER_USER_SUCCESS = 'REGISTER_USER_SUCCESS';

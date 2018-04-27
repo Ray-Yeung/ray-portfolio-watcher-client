@@ -1,12 +1,12 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {fetchStock} from '../../actions/stockActions';
+import {fetchStockApi} from '../../actions/stockActions';
 
-class AddStock extends React.Component {
+class SearchStock extends React.Component {
   onSubmit(event) {
     event.preventDefault();
     const search = document.getElementById("searchText").value;
-    this.props.dispatch(fetchStock(search));
+    this.props.dispatch(fetchStockApi(search));
     console.log(search);
   }
   
@@ -29,7 +29,7 @@ class AddStock extends React.Component {
           <input className="searchStock-input" id="searchText"/>
           <button
             className="searchStock-button"
-            onClick={search => this.props.dispatch(fetchStock(search))}
+            onClick={search => this.props.dispatch(fetchStockApi(search))}
           >Search Stock</button>
         </form>
       </div>
@@ -43,4 +43,4 @@ const mapStateToProps = state => ({
   authToken: state.user.authToken
 });
 
-export default connect(mapStateToProps)(AddStock);
+export default connect(mapStateToProps)(SearchStock);

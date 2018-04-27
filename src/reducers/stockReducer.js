@@ -4,7 +4,8 @@ import {
   HANDLE_ONCHANGE, 
   HANDLE_ONCLICK, 
   FETCH_STOCK_SUCCESS ,
-  FETCH_LOGO_SUCCESS
+  FETCH_LOGO_SUCCESS,
+  POPULATE_STATE_STOCKS
   } from '../actions/stockActions';
 
 const initialState = {
@@ -45,7 +46,12 @@ export const stockReducer = (state=initialState, action) => {
   else if(action.type === FETCH_LOGO_SUCCESS) {
     return Object.assign({}, state, {
       logo: action.logo
-    })
+    });
+  }
+  else if(action.type === POPULATE_STATE_STOCKS) {
+    return Object.assign({}, state, {
+      stocks: action.stocks
+    });
   }
   return state;
 };

@@ -28,6 +28,12 @@ export const addStock = stock => ({
   stock
 });
 
+export const POPULATE_STATE_STOCKS = 'POPULATE_STATE_STOCKS';
+export const populateStateStocks = stocks => ({
+  type: POPULATE_STATE_STOCKS,
+  stocks
+});
+
 // export const DELETE_STOCK = 'DELETE_STOCK';
 // export const deleteStock = stock => ({
 //   type: DELETE_STOCK,
@@ -46,7 +52,24 @@ export const handleOnClick = value => ({
   value
 });
 
-export const fetchStock = (company) => {
+export const fetchStock = (userId, authToken) => {
+  console.log(userId);
+  return(dispatch) => {
+    fetch(`${API_BASE_URL}/api/stock/${userId}`, {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${authToken}`
+      },
+    })
+    .then(response => response.json())
+    .then(data => dispatch(populateStateStocks(data)))
+    .catch(err => console.log(err))
+  }
+};
+
+export const fetchStockApi = (company) => {
   console.log(company);
   return(dispatch) => {
     fetch(`https://api.iextrading.com/1.0/stock/${company}/quote`, {
