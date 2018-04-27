@@ -1,15 +1,16 @@
 import React from 'react';
 import {connect} from 'react-redux';
-// import {fetchStock} from '../../actions/stockActions';
+// import {fetchLogo} from '../../actions/stockActions';
 
 class StockCard extends React.Component {
   componentDidMount() {
-    // this.props.dispatch(fetchStock())
+    // this.props.dispatch(fetchLogo())
   }
   render() {
     // console.log(this.props);
     return (
       <div>
+        {/* <img src={this.props.stocks.logo}> */}
           <ul>
             <li>Symbol: {this.props.searchedStock.symbol}</li> <br/>
             <li>Company: {this.props.searchedStock.companyName}</li> <br/>
@@ -24,7 +25,8 @@ class StockCard extends React.Component {
 };
 
 const mapStateToProps = state => ({
-  searchedStock: state.stocks.searchedStock
+  searchedStock: state.stockReducer.searchedStock,
+  logo: state.stockReducer.logo
 });
 
 export default connect(mapStateToProps)(StockCard);

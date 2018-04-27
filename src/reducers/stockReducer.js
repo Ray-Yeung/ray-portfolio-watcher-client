@@ -1,9 +1,17 @@
-import { ADD_STOCK, DELETE_STOCK, HANDLE_ONCHANGE, HANDLE_ONCLICK, FETCH_STOCK_SUCCESS } from '../actions/stockActions';
+import { 
+  ADD_STOCK, 
+  // DELETE_STOCK, 
+  HANDLE_ONCHANGE, 
+  HANDLE_ONCLICK, 
+  FETCH_STOCK_SUCCESS ,
+  FETCH_LOGO_SUCCESS
+  } from '../actions/stockActions';
 
 const initialState = {
   stocks: [],
   value: '',
-  searchedStock: {}
+  searchedStock: {},
+  logo: null
 }
 
 export const stockReducer = (state=initialState, action) => {
@@ -13,11 +21,11 @@ export const stockReducer = (state=initialState, action) => {
       stocks: [...state.stocks, action.stock]
     });
   }
-  else if(action.type === DELETE_STOCK) {
-    return Object.assign({}, state, {
-      stocks: state.stocks.filter(stock => stock.id !== action.stock.id)
-    });
-  }
+  // else if(action.type === DELETE_STOCK) {
+  //   return Object.assign({}, state, {
+  //     stocks: state.stocks.filter(stock => stock.id !== action.stock.id)
+  //   });
+  // }
 //   else if(action.type = HANDLE_ONCHANGE) {
 //     return Object.assign({}, state, {
 //       value:
@@ -33,6 +41,11 @@ export const stockReducer = (state=initialState, action) => {
     return Object.assign({}, state, {
       searchedStock: action.stock
     });
+  }
+  else if(action.type === FETCH_LOGO_SUCCESS) {
+    return Object.assign({}, state, {
+      logo: action.logo
+    })
   }
   return state;
 };
