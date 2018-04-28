@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import './stockList.css';
-import {createStock, fetchStock, deleteStock} from '../../actions/stockActions';
+import { createStock, fetchStock, deleteStock } from '../../actions/stockActions';
 
 export class StockList extends React.Component {
   componentDidUpdate() {
@@ -15,6 +15,9 @@ export class StockList extends React.Component {
 
   render() {
     console.log(this.props.stocks);
+    const stocks = this.props.stocks;
+    const listStocks = stocks.map((stock => 
+      <li key={stocks.id}>{stocks}</li>))
     return (
       <div>
           <h3>{this.props.searchedStock.companyName}</h3>
@@ -29,7 +32,8 @@ export class StockList extends React.Component {
           >Add stock</button>
           {/* <button label="Delete" value="Delete" onClick={() => this.props.dispatch(deleteStock())}>Delete</button> */}
       
-          {this.props.stocks.map(stock => <li>{stock.companyName}</li>)}
+          {/* {this.props.stocks.map(stock => <li key={}>{stock.companyName}</li>)} */}
+          {stocks}
       </div>
     );
   }

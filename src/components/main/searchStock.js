@@ -14,16 +14,6 @@ class SearchStock extends React.Component {
   render() {
     
     return (
-      // <div className="addStock">
-      //   <form onSubmit={event => this.onSubmit(event)}>
-      //     <label htmlFor="addStock">Search Stock</label>
-      //     <input className="addStock-input" id="searchText"/>
-      //     <button 
-      //       className="addStock-button"
-      //       onClick={() => this.props.dispatch(createStock(this.props.searchedStock, this.props.userId, this.props.authToken))}
-      //     >Search stock</button>
-      //   </form>
-      // </div>
       <div className="searchStock">
         <form onSubmit={event => this.onSubmit(event)}>
           <input className="searchStock-input" id="searchText"/>
