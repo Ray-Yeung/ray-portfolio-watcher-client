@@ -1,11 +1,11 @@
 import { 
   ADD_STOCK, 
-  // DELETE_STOCK, 
+  DELETE_STOCK, 
   // HANDLE_ONCHANGE, 
   HANDLE_ONCLICK, 
   FETCH_STOCK_SUCCESS ,
   FETCH_LOGO_SUCCESS,
-  POPULATE_STATE_STOCKS
+  POPULATE_STATE_STOCKS,
   } from '../actions/stockActions';
 
 const initialState = {
@@ -22,11 +22,11 @@ export const stockReducer = (state=initialState, action) => {
       stocks: [...state.stocks, action.stock]
     });
   }
-  // else if(action.type === DELETE_STOCK) {
-  //   return Object.assign({}, state, {
-  //     stocks: state.stocks.filter(stock => stock.id !== action.stock.id)
-  //   });
-  // }
+  else if(action.type === DELETE_STOCK) {
+    return Object.assign({}, state, {
+      stocks: state.stocks.filter(stock => stock.id !== action.stock.id)
+    });
+  }
 //   else if(action.type = HANDLE_ONCHANGE) {
 //     return Object.assign({}, state, {
 //       value:

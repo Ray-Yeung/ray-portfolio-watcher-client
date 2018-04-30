@@ -34,11 +34,11 @@ export const populateStateStocks = stocks => ({
   stocks
 });
 
-// export const DELETE_STOCK = 'DELETE_STOCK';
-// export const deleteStock = stock => ({
-//   type: DELETE_STOCK,
-//   stock
-// });
+export const DELETE_STOCK = 'DELETE_STOCK';
+export const deleteStock = stock => ({
+  type: DELETE_STOCK,
+  stock
+});
 
 export const HANDLE_ONCHANGE = 'HANDLE_ONCHANGE';
 export const handleOnChange = value => ({
@@ -51,6 +51,7 @@ export const handleOnClick = value => ({
   type: HANDLE_ONCLICK,
   value
 });
+
 
 export const fetchStock = (userId, authToken) => {
   console.log(userId);
@@ -101,7 +102,6 @@ export const fetchLogo = (company) => {
 };
 
 export const createStock = (stock, userId, authToken) => {
-  console.log(stock, userId, authToken);
   return(dispatch) => {
     fetch(`${API_BASE_URL}/api/stock/${userId}`, {
       method: 'POST',
@@ -118,7 +118,8 @@ export const createStock = (stock, userId, authToken) => {
   }
 };
 
-export const deleteStock = (stockId, userId, authToken) => {
+export const removeStock = (stockId, userId, authToken) => {
+  console.log(stockId, userId, authToken);
   return(dispatch) => {
     fetch(`${API_BASE_URL}/api/stock/${userId}}`, {
       method: 'DELETE',
@@ -130,7 +131,9 @@ export const deleteStock = (stockId, userId, authToken) => {
       body: JSON.stringify({stockId})
     })
     .then(response => response.json())
-    .then(data => dispatch(fetchStockSuccess(data)))
+    .then(data => dispatch(deleteStock(data)))
     .catch(err => console.log(err))
   }
 };
+
+

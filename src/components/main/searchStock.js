@@ -1,18 +1,32 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {fetchStockApi} from '../../actions/stockActions';
+import { createStock, fetchStockApi } from '../../actions/stockActions';
+import StockInfo from './stockInfo';
 
 class SearchStock extends React.Component {
   onSubmit(event) {
     event.preventDefault();
     const search = document.getElementById("searchText").value;
     this.props.dispatch(fetchStockApi(search));
-    console.log(search);
+    // console.log(search);
   }
   
+  // onClick(){
+  //   // event.preventDefault();
+  //   const stock= this.props.searchedStock;
+  //   return (
+  //     <StockInfo 
+  //       symbol={stock.symbol}
+
+  //     />
+
+      
+  //   );
+  // }
 
   render() {
-    
+    console.log(this.props.searchedStock);
+    const stock = this.props.searchedStock;
     return (
       <div className="searchStock">
         <form onSubmit={event => this.onSubmit(event)}>
@@ -21,7 +35,15 @@ class SearchStock extends React.Component {
             className="searchStock-button"
             onClick={search => this.props.dispatch(fetchStockApi(search))}
           >Search Stock</button>
+        
         </form>
+        <StockInfo 
+          companyName={stock.companyName}
+        />
+        <button 
+          className="addStock-button"
+          onClick={() => this.props.dispatch(createStock(this.props.searchedStock, this.props.userId, this.props.authToken))}
+        >Add stock</button>
       </div>
     );
   }
