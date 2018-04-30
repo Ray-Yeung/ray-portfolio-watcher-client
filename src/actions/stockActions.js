@@ -102,6 +102,7 @@ export const fetchLogo = (company) => {
 };
 
 export const createStock = (stock, userId, authToken) => {
+  console.log(stock, userId, authToken);
   return(dispatch) => {
     fetch(`${API_BASE_URL}/api/stock/${userId}`, {
       method: 'POST',
@@ -119,19 +120,21 @@ export const createStock = (stock, userId, authToken) => {
 };
 
 export const removeStock = (stockId, userId, authToken) => {
-  console.log(stockId, userId, authToken);
+  // console.log(stockId, userId, authToken);
   return(dispatch) => {
-    fetch(`${API_BASE_URL}/api/stock/${userId}}`, {
+    fetch(`${API_BASE_URL}/api/stock/${userId}/${stockId}`, {
       method: 'DELETE',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${authToken}`
-      },
-      body: JSON.stringify({stockId})
+      }
     })
     .then(response => response.json())
-    .then(data => dispatch(deleteStock(data)))
+    .then(data => {
+      console.log(data);
+      dispatch(deleteStock(data))
+    })
     .catch(err => console.log(err))
   }
 };

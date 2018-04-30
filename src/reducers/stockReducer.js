@@ -17,12 +17,15 @@ const initialState = {
 
 export const stockReducer = (state=initialState, action) => {
     // console.log("hello", action);
+    
     if(action.type === ADD_STOCK) {
+    console.log('test add stock');
     return Object.assign({}, state, {
       stocks: [...state.stocks, action.stock]
     });
   }
   else if(action.type === DELETE_STOCK) {
+    console.log('test');
     return Object.assign({}, state, {
       stocks: state.stocks.filter(stock => stock.id !== action.stock.id)
     });

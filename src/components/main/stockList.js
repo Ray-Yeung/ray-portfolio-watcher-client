@@ -1,13 +1,13 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import './stockList.css';
-import { createStock, fetchStock, deleteStock } from '../../actions/stockActions';
+import { createStock, fetchStock, removeStock } from '../../actions/stockActions';
 import StockCard2 from './stockCard2';
 
 export class StockList extends React.Component {
   componentDidUpdate() {
     if(this.props.userId && this.props.stocks.length <= 0) {
-      console.log(this.props);
+      // console.log(this.props);
       this.props.dispatch(fetchStock(this.props.userId, this.props.authToken))
     } 
   }
@@ -16,9 +16,10 @@ export class StockList extends React.Component {
 
   render() {
     const stocks = this.props.stocks[37];
-    console.log(stocks);
+    // console.log(stocks);
 
     const stockCard = this.props.stocks.map((stock, index) => {
+      // console.log(stock);
       return (
         <div>
         <StockCard2 
@@ -30,7 +31,10 @@ export class StockList extends React.Component {
           open={stock.open}
           latestPrice={stock.latestPrice}
         />
-        <button>test</button>
+        <button
+          className="removeStock-button"
+          onClick={() => this.props.dispatch(removeStock(stock._id, this.props.userId, this.props.authToken))}
+        >Delete</button>
         </div>
       );
     });
@@ -60,13 +64,13 @@ export class StockList extends React.Component {
 };
 
 const mapStateToProps = state => {
-  console.log(state);
+  // console.log(state);
   return {
-  
   searchedStock: state.stockReducer.searchedStock,
+  stocks: state.stockReducer.stocks,
   userId: state.user.userId,
   authToken: state.user.authToken,
-  stocks: state.stockReducer.stocks
+  stockId: state.user.stockId
 }};
 
 export default connect(mapStateToProps)(StockList);

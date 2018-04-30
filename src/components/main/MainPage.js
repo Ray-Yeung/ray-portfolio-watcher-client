@@ -14,7 +14,7 @@ export class MainPage extends React.Component {
         <SearchStock />
         <StockList />
         {/* <StockCard /> */}
-        <StockCard2 />
+        {/* <StockCard2 /> */}
       </div>
     );
   }
