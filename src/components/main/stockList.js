@@ -1,28 +1,27 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import './stockList.css';
-import { createStock, fetchStock, removeStock } from '../../actions/stockActions';
-import StockCard2 from './stockCard2';
+import { fetchStock, removeStock } from '../../actions/stockActions';
+import StockCard from './stockCard';
 
 export class StockList extends React.Component {
   componentDidUpdate() {
     if(this.props.userId && this.props.stocks.length <= 0) {
       // console.log(this.props);
       this.props.dispatch(fetchStock(this.props.userId, this.props.authToken))
+      // this.forceUpdate()
     } 
   }
  
- 
-
   render() {
-    const stocks = this.props.stocks[37];
+    // const stocks = this.props.stocks[37];
     // console.log(stocks);
 
     const stockCard = this.props.stocks.map((stock, index) => {
       // console.log(stock);
       return (
         <div>
-        <StockCard2 
+        <StockCard 
           key={index}
           symbol={stock.symbol}
           companyName={stock.companyName}
@@ -38,7 +37,7 @@ export class StockList extends React.Component {
         </div>
       );
     });
-    
+  
     return (
       <div>
           {/* <h3>{this.props.searchedStock.companyName}</h3>

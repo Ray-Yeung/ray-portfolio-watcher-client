@@ -10,23 +10,16 @@ class SearchStock extends React.Component {
     this.props.dispatch(fetchStockApi(search));
     // console.log(search);
   }
-  
-  // onClick(){
-  //   // event.preventDefault();
-  //   const stock= this.props.searchedStock;
-  //   return (
-  //     <StockInfo 
-  //       symbol={stock.symbol}
-
-  //     />
-
-      
-  //   );
-  // }
+ 
+  onClick(search) {
+    this.props.dispatch(fetchStockApi(search))
+  }
 
   render() {
     console.log(this.props.searchedStock);
     const stock = this.props.searchedStock;
+
+
     return (
       <div className="searchStock">
         <form onSubmit={event => this.onSubmit(event)}>
