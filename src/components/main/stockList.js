@@ -39,7 +39,7 @@ export class StockList extends React.Component {
     });
   
     return (
-      <div>
+      <div className="StockList"> 
           {/* <h3>{this.props.searchedStock.companyName}</h3>
           <div>
             {this.props.searchedStock.symbol} <br/>
@@ -59,7 +59,6 @@ export class StockList extends React.Component {
       </div>
     );
   }
-  
 };
 
 const mapStateToProps = state => {

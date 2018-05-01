@@ -1,8 +1,9 @@
 import React from 'react';
+// import './stockInfo.css';
 
 const StockInfo = (stock) => {
   return (
-    <div>
+    <div className="StockInfo">
       {stock.companyName}
     </div>
   );

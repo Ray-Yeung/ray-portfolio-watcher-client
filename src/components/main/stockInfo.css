@@ -1,4 +1,4 @@
-.StockCard {
+.StockInfo {
   box-shadow: border-box;
   flex: 0 0 98%;
   list-style: none;
@@ -11,30 +11,30 @@
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
-
+  
 @media only screen and (min-width: 600px) {
-  .StockCard {
+  .StockInfo {
     flex: 0 0 48%;
   }
 }
-
+  
 @media only screen and (min-width: 1024px) {
-  .StockCard {
+  .StockInfo {
     flex: 0 0 24%;
   }
 }
-
-.StockCard:hover {
+  
+.StockInfo:hover {
   background-color: #fff;
   box-shadow: 0 14px 28px rgba(0,0,0,0.24), 0 10px 10px rgba(0,0,0,0.20);
 }
-
-.StockCard > * {
+  
+.StockInfo > * {
   letter-spacing: 1px;
   font-weight: 500;
 }
-
-.StockCard > * span{
+  
+.StockInfo > * span {
   color: #757575;
   font-weight: 400;
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import { createStock, fetchStockApi } from '../../actions/stockActions';
 import StockInfo from './stockInfo';
+import './searchStock.css';
 
 class SearchStock extends React.Component {
   onSubmit(event) {
@@ -21,11 +22,11 @@ class SearchStock extends React.Component {
 
 
     return (
-      <div className="searchStock">
+      <div className="SearchBar">
         <form onSubmit={event => this.onSubmit(event)}>
-          <input className="searchStock-input" id="searchText"/>
+          <input className="SearchBar__Input" id="searchText"/>
           <button
-            className="searchStock-button"
+            className="SearchBar__Button"
             onClick={search => this.props.dispatch(fetchStockApi(search))}
           >Search Stock</button>
         
@@ -34,7 +35,7 @@ class SearchStock extends React.Component {
           companyName={stock.companyName}
         />
         <button 
-          className="addStock-button"
+          className="AddStock__Button"
           onClick={() => this.props.dispatch(createStock(this.props.searchedStock, this.props.userId, this.props.authToken))}
         >Add stock</button>
       </div>
