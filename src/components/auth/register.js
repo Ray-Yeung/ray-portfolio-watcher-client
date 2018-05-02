@@ -1,9 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {registerUser} from '../../actions/authActions';
+import './register.css';
 
 const Register = ({ dispatch }) => (
-  <div>
+  <div className="RegisterPage">
     <h1>Register</h1>
     <form onSubmit={event => {
       event.preventDefault();
@@ -12,12 +13,12 @@ const Register = ({ dispatch }) => (
       dispatch(registerUser(username, password));
     }}>
       <label htmlFor="username">Username</label> <br/>
-      <input type="text" name="username"/> <br/>
+      <input className="RegisterUsername__Input" type="text" name="username"/> <br/>
       <br/>
       <label htmlFor="password">Password</label> <br/>
-      <input type="text" name="password"/> <br/>
+      <input className="RegisterPassword__Input" type="text" name="password"/> <br/>
       <br/>
-      <button type="submit">Submit</button>
+      <button className="Register__Butoon" type="submit">Submit</button>
     </form>
   </div>
 )

@@ -6,13 +6,14 @@ import {
   FETCH_STOCK_SUCCESS ,
   FETCH_LOGO_SUCCESS,
   POPULATE_STATE_STOCKS,
+  POPULATE_STATE_LOGOS
   } from '../actions/stockActions';
 
 const initialState = {
   stocks: [],
   value: '',
   searchedStock: {},
-  logo: null
+  logo: []
 }
 
 export const stockReducer = (state=initialState, action) => {
@@ -48,12 +49,17 @@ export const stockReducer = (state=initialState, action) => {
   }
   else if(action.type === FETCH_LOGO_SUCCESS) {
     return Object.assign({}, state, {
-      logo: action.logo
+      logo: [...state.logo, action.logo]
     });
   }
   else if(action.type === POPULATE_STATE_STOCKS) {
     return Object.assign({}, state, {
       stocks: action.stocks
+    });
+  }
+  else if(action.type === POPULATE_STATE_LOGOS) {
+    return Object.assign({}, state, {
+      logo: action.logos
     });
   }
   return state;

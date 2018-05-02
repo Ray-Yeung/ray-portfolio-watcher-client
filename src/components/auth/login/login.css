@@ -1,0 +1,36 @@
+.LoginPage {
+    height: 50px;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+      
+.LoginUsername__Input {
+  outline: none;
+  width: 50%;
+  height: 35px;
+}
+
+.LoginPassword__Input {
+  outline: none;
+  width: 50%;
+  height: 35px;
+}
+      
+button.Login__Button {
+  outline: none;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+    align-self: stretch;
+  background-color: #333;
+    color: #fff;
+  max-width: 200px;
+  width: 25%;
+  height: 34px;
+}
+  
+@media only screen and (min-width: 600px) {
+  .LoginUsername__Input, .LoginPassword__Input {
+    width: 65%;
+  }
+}

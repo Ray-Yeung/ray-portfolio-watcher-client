@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import './stockList.css';
-import { fetchStock, removeStock } from '../../actions/stockActions';
+import { fetchStock, fetchLogo, removeStock } from '../../actions/stockActions';
 import StockCard from './stockCard';
 
 export class StockList extends React.Component {
@@ -9,20 +9,31 @@ export class StockList extends React.Component {
     if(this.props.userId && this.props.stocks.length <= 0) {
       // console.log(this.props);
       this.props.dispatch(fetchStock(this.props.userId, this.props.authToken))
-      // this.forceUpdate()
+      this.props.dispatch(fetchLogo(this.props.userId, this.props.authToken))
+      // const logo = this.props.dispatch(fetchLogo())
     } 
+    // const loadLogo = this.props.dispatch(fetchLogo())
+    // if(this.props.stocks.length >= 1) {
+      console.log(this.props.logo);
+    // }
   }
+  componentDidMount() {
+    console.log(this.props.stocks);
+  }
+  
  
   render() {
     // const stocks = this.props.stocks[37];
     // console.log(stocks);
+    
 
     const stockCard = this.props.stocks.map((stock, index) => {
-      // console.log(stock);
+      // console.log(stock.symbol);
+      
+      // console.log(logo.url);
       return (
-        <div>
+        <div key={index}>
         <StockCard 
-          key={index}
           symbol={stock.symbol}
           companyName={stock.companyName}
           primaryExchange={stock.primaryExchange}
@@ -40,16 +51,6 @@ export class StockList extends React.Component {
   
     return (
       <div className="StockList"> 
-          {/* <h3>{this.props.searchedStock.companyName}</h3>
-          <div>
-            {this.props.searchedStock.symbol} <br/>
-            {this.props.searchedStock.open} <br/>
-            {this.props.searchedStock.latestPrice} <br/>
-          </div>
-          <button 
-            className="addStock-button"
-            onClick={() => this.props.dispatch(createStock(this.props.searchedStock, this.props.userId, this.props.authToken))}
-          >Add stock</button> */}
           {/* <button label="Delete" value="Delete" onClick={() => this.props.dispatch(deleteStock())}>Delete</button> */}
       
           {/* {this.props.stocks.map((stock, index) => <li key={index}>{stock.companyName}</li>)} */}
@@ -68,7 +69,8 @@ const mapStateToProps = state => {
   stocks: state.stockReducer.stocks,
   userId: state.user.userId,
   authToken: state.user.authToken,
-  stockId: state.user.stockId
+  stockId: state.user.stockId,
+  logo: state.stockReducer.logo
 }};
 
 export default connect(mapStateToProps)(StockList);
