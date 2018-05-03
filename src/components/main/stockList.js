@@ -30,11 +30,13 @@ export class StockList extends React.Component {
           sector={stock.sector}
           open={stock.open}
           latestPrice={stock.latestPrice}
+          week52High={stock.week52High}
+          week52Low={stock.week52Low}
+          peRatio={stock.peRatio}
         />
         <button
           className="removeStock-button"
           onClick={() => this.props.dispatch(removeStock(stock._id, this.props.userId, this.props.authToken))}
-          // class="w3-small"
         ><i className="fa fa-trash"></i></button>
         </div>
       );

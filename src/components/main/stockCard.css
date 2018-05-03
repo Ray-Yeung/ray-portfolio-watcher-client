@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
 .StockCard {
   box-shadow: border-box;
   flex: 0 0 98%;
@@ -10,6 +12,14 @@
   background-color: #fefefe;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+h3, h5 {
+  margin: 0;
+}
+
+li, span {
+  margin: 0.25;
 }
 
 @media only screen and (min-width: 600px) {
