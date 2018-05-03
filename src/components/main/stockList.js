@@ -7,30 +7,20 @@ import StockCard from './stockCard';
 export class StockList extends React.Component {
   componentDidUpdate() {
     if(this.props.userId && this.props.stocks.length <= 0) {
-      // console.log(this.props);
       this.props.dispatch(fetchStock(this.props.userId, this.props.authToken))
       this.props.dispatch(fetchLogo(this.props.userId, this.props.authToken))
       // const logo = this.props.dispatch(fetchLogo())
+      // this.setState();
     } 
     // const loadLogo = this.props.dispatch(fetchLogo())
     // if(this.props.stocks.length >= 1) {
-      console.log(this.props.logo);
+      // console.log(this.props.logo);
     // }
   }
-  componentDidMount() {
-    console.log(this.props.stocks);
-  }
-  
  
   render() {
-    // const stocks = this.props.stocks[37];
-    // console.log(stocks);
-    
 
     const stockCard = this.props.stocks.map((stock, index) => {
-      // console.log(stock.symbol);
-      
-      // console.log(logo.url);
       return (
         <div key={index}>
         <StockCard 
@@ -51,19 +41,14 @@ export class StockList extends React.Component {
   
     return (
       <div className="StockList"> 
-          {/* <button label="Delete" value="Delete" onClick={() => this.props.dispatch(deleteStock())}>Delete</button> */}
-      
           {/* {this.props.stocks.map((stock, index) => <li key={index}>{stock.companyName}</li>)} */}
-
           {stockCard}
-          
       </div>
     );
   }
 };
 
 const mapStateToProps = state => {
-  // console.log(state);
   return {
   searchedStock: state.stockReducer.searchedStock,
   stocks: state.stockReducer.stocks,

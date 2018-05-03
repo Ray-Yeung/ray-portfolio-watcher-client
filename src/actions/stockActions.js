@@ -1,5 +1,4 @@
 import { API_BASE_URL } from '../config';
-// import SearchBar from '../components/main/searchBar';
 
 export const FETCH_STOCKS_REQUEST = 'FETCH_STOCKS_REQUEST';
 export const fetchStocksRequest = () => ({
@@ -61,7 +60,6 @@ export const handleOnClick = value => ({
 
 
 export const fetchStock = (userId, authToken) => {
-  console.log(userId);
   return(dispatch) => {
     fetch(`${API_BASE_URL}/api/stock/${userId}`, {
       method: 'GET',
@@ -78,7 +76,6 @@ export const fetchStock = (userId, authToken) => {
 };
 
 export const fetchStockApi = (company) => {
-  // console.log(company);
   return(dispatch) => {
     fetch(`https://api.iextrading.com/1.0/stock/${company}/quote`, {
       method: 'GET',
@@ -88,7 +85,7 @@ export const fetchStockApi = (company) => {
       },
     })
     .then(response => response.json())
-    .then(data => dispatch(fetchStockSuccess(data)))
+    .then(stock => dispatch(createStock(stock, localStorage.getItem('userId'), localStorage.getItem('authToken'))))
     .catch(err => console.log(err))
   }
 };
@@ -110,7 +107,6 @@ export const fetchLogo = (userId, authToken) => {
 };
 
 export const fetchLogoApi = (company) => {
-  console.log(company);
   return(dispatch) => {
     fetch(`https://api.iextrading.com/1.0/stock/${company}/logo`, {
       method: 'GET',
@@ -120,16 +116,13 @@ export const fetchLogoApi = (company) => {
       },
     })
     .then(response => response.json())
-    .then(data => {
-      console.log(data),
-      dispatch(fetchLogoSuccess(data))
-    })
+    .then(data => dispatch(fetchLogoSuccess(data)))
     .catch(err => console.log(err))
   }
 };
 
 export const createStock = (stock, userId, authToken) => {
-  console.log(stock, userId, authToken);
+  // console.log(stock, userId, authToken);
   return(dispatch) => {
     fetch(`${API_BASE_URL}/api/stock/${userId}`, {
       method: 'POST',
