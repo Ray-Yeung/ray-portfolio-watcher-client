@@ -34,7 +34,8 @@ export class StockList extends React.Component {
         <button
           className="removeStock-button"
           onClick={() => this.props.dispatch(removeStock(stock._id, this.props.userId, this.props.authToken))}
-        >Delete</button>
+          // class="w3-small"
+        ><i className="fa fa-trash"></i></button>
         </div>
       );
     });

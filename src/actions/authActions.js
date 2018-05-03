@@ -14,9 +14,7 @@ export const loginUserSuccess = (userId, token) => ({
   token
 });
 
-
 export const registerUser = (username, password) => {
-  // console.log(password);
   return (dispatch) => {
     fetch(`${API_BASE_URL}/auth/register`, {
       method: 'POST',
@@ -36,7 +34,6 @@ export const registerUser = (username, password) => {
 };
 
 export const loginUser = (username, password) => {
-  console.log(username, password);
   return (dispatch) => {
     fetch(`${API_BASE_URL}/auth/login`, {
       method: 'POST',
@@ -53,7 +50,6 @@ export const loginUser = (username, password) => {
     .then(response => {
       localStorage.setItem('authToken', response.authToken)
       localStorage.setItem('userId', response.userId)
-      console.log(response);
       dispatch(loginUserSuccess(response.userId, response.authToken))
     })
     .then(json => window.location = '/main')

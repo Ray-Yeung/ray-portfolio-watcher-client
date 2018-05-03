@@ -2,11 +2,13 @@
   height: 50px;
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
 }
     
 .AddStock__Input {
   outline: none;
-  width: 50%;
+  width: 20%;
   height: 35px;
 }
     
@@ -21,6 +23,7 @@ button.AddStock__Button {
   max-width: 200px;
   width: 25%;
   height: 34px;
+  margin-left: 1.0rem;
 }
 
 button.AddStock__Button {
@@ -44,9 +47,10 @@ button.AddStock__LogoutButton {
   align-self: stretch;
   background-color: #333;
   color: #fff;
-  max-width: 200px;
-  width: 25%;
-  height: 34px;
+  max-width: 100px;
+  width: 15%;
+  height: 20px;
+  margin-left: 5.0rem;
 }
     
 @media only screen and (min-width: 600px) {

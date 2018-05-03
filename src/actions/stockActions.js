@@ -151,10 +151,7 @@ export const removeStock = (stockId, userId, authToken) => {
       }
     })
     .then(response => response.json())
-    .then(data => {
-      console.log(data);
-      dispatch(deleteStock(data))
-    })
+    .then(data => dispatch(deleteStock(data)))
     .catch(err => console.log(err))
   }
 };

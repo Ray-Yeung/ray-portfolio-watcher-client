@@ -22,11 +22,11 @@ class AddStock extends React.Component {
               this.props.dispatch(fetchStockApi(search))}
               // this.props.dispatch(createStock(this.props.searchedStock, this.props.userId, this.props.authToken))
           >Add Stock To Portfolio</button>   
-        </form>
-        <button 
+          <button 
           className="AddStock__LogoutButton"
           onClick={() => this.props.dispatch(logoutUser())}
-        >Logout</button>      
+        >Logout</button> 
+        </form>
       </div>
     );
   }
