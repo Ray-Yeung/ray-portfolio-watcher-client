@@ -1,15 +1,24 @@
 .AddStock {
   height: 50px;
   margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 120px;
   margin-left: 2.5rem;
   margin-right: 2.5rem;
+  /* margin: 0 2.5rem; */
+  text-align: center;
 }
-    
+
+.AddStock__Label {
+  /* text-transform: uppercase; */
+  font-weight: 200;
+  font-size: 16px;
+}
+
 .AddStock__Input {
   outline: none;
-  width: 20%;
+  width: 400px;
   height: 35px;
+  text-align: center;
 }
     
 button.AddStock__Button {
@@ -22,8 +31,8 @@ button.AddStock__Button {
   color: #fff;
   max-width: 200px;
   width: 25%;
-  height: 34px;
-  margin-left: 1.0rem;
+  height: 35px;
+  /* margin-left: 1.0rem; */
 }
 
 button.AddStock__Button {
@@ -50,17 +59,17 @@ button.AddStock__LogoutButton {
   max-width: 100px;
   width: 15%;
   height: 20px;
-  margin-left: 5.0rem;
+  /* margin-left: 5.0rem; */
 }
 
 input[type="text"] {
-  font-size: 15px;
+  font-size: 16px;
   font-family: sans-serif;
   color: #373333;
 }
 
-@media only screen and (min-width: 600px) {
+/* @media only screen and (min-width: 600px) {
   .AddStock__Input {
     width: 65%;
   }
-}
+} */

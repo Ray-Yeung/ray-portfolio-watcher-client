@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import { fetchStockApi } from '../../actions/stockActions';
 import { logoutUser } from '../../actions/authActions';
+
 import './addStock.css';
 
 class AddStock extends React.Component {
@@ -15,23 +16,25 @@ class AddStock extends React.Component {
     return (
       <div className="AddStock">
         <form onSubmit={event => this.onSubmit(event)}>
-          <label className="AddStock__Label">Search by stock symbol</label>
+          <label className="AddStock__Label">Search by stock symbol</label> <br/>
           <input 
             type="text"
             className="AddStock__Input" 
             id="AddStock"
             placeholder="E.g. AAPL"
-          />
+          /> <br/>
+          <br/>
           <button
             className="AddStock__Button"
             onClick={search => 
               this.props.dispatch(fetchStockApi(search))}
               // this.props.dispatch(createStock(this.props.searchedStock, this.props.userId, this.props.authToken))
-          >Add Stock To Portfolio</button>   
+          >Add Stock To Portfolio</button> <br/>
+          <br/>
           <button 
-          className="AddStock__LogoutButton"
-          onClick={() => this.props.dispatch(logoutUser())}
-        >Logout</button> 
+            className="AddStock__LogoutButton"
+            onClick={() => this.props.dispatch(logoutUser())}
+          >Logout</button> 
         </form>
       </div>
     );

@@ -4,6 +4,7 @@ import './MainPage.css';
 import AddStock from './addStock';
 import StockList from './stockList';
 
+
 export class MainPage extends React.Component {
   render() {
     return (
