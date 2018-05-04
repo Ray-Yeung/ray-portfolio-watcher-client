@@ -5,18 +5,28 @@ import './login.css';
 
 const Login = ({ dispatch }) => (
   <div className="LoginPage">
-    <h1>Login</h1>
+    <h1 className="Login__Title">Login</h1>
     <form onSubmit={event => {
       event.preventDefault();
       const username = event.target.username.value;
       const password = event.target.password.value;
       dispatch(loginUser(username, password));
     }}>
-      <label htmlFor="username">Username</label> <br/>
-      <input className="LoginUsername__Input" type="text" name="username"/> <br/>
+      <label className="Username__Label" htmlFor="username">Username</label> <br/>
+      <input 
+        className="LoginUsername__Input" 
+        type="text" 
+        autoComplete="current-username"
+        name="username"
+      /> <br/>
       <br/>
-      <label htmlFor="password">Password</label> <br/>
-      <input className="LoginPassword__Input" type="text" name="password"/> <br/>
+      <label className="Password__Label" htmlFor="password">Password</label> <br/>
+      <input 
+        className="LoginPassword__Input" 
+        type="password" 
+        autoComplete="current-passwod" 
+        name="password"
+      /> <br/>
       <br/>
       <button className="Login__Button" type="submit">Submit</button>
     </form>

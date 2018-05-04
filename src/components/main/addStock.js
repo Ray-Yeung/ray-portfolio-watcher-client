@@ -15,7 +15,13 @@ class AddStock extends React.Component {
     return (
       <div className="AddStock">
         <form onSubmit={event => this.onSubmit(event)}>
-          <input className="AddStock__Input" id="AddStock"/>
+          <label className="AddStock__Label">Search by stock symbol</label>
+          <input 
+            type="text"
+            className="AddStock__Input" 
+            id="AddStock"
+            placeholder="E.g. AAPL"
+          />
           <button
             className="AddStock__Button"
             onClick={search => 

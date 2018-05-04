@@ -1,19 +1,41 @@
 .LoginPage {
-    height: 50px;
-    margin-top: 2.5rem;
+    /* height: 50px;
+    margin-top: 2.5rem; */
+    text-align: center;
     margin-bottom: 2.5rem;
   }
-      
+
+.Username__Label {
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 15px;
+}
+
+.Password__Label {
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 15px;
+}
+
 .LoginUsername__Input {
   outline: none;
-  width: 50%;
-  height: 35px;
+  width: 210px;
+  height: 20px;
+  text-align: center;
 }
 
 .LoginPassword__Input {
   outline: none;
-  width: 50%;
-  height: 35px;
+  width: 210px;
+  height: 20px;
+  text-align: center;
+}
+
+.Login__Title {
+  letter-spacing: 8px;
+  font-weight: 300;
+  font-size: xx-large;
+  text-transform: uppercase;
 }
       
 button.Login__Button {
@@ -21,16 +43,31 @@ button.Login__Button {
   border: none;
   text-transform: uppercase;
   letter-spacing: 1px;
-    align-self: stretch;
+  align-self: stretch;
   background-color: #333;
-    color: #fff;
-  max-width: 200px;
+  color: #fff;
+  max-width: 170px;
   width: 25%;
-  height: 34px;
+  height: 28px;
+}
+
+input[type="text"] {
+  font-size: 15px;
+  font-family: sans-serif;
+  color: #373333;
+}
+
+.body {
+  background-image: url("http://gdurl.com/fG5N");
 }
   
-@media only screen and (min-width: 600px) {
+/* @media only screen and (min-width: 600px) {
   .LoginUsername__Input, .LoginPassword__Input {
     width: 65%;
   }
+} */
+
+@font-face {
+  font-family: 'Roboto', sans-serif;
+  src: url('https://fonts.googleapis.com/css?family=Roboto')
 }

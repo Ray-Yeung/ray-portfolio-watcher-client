@@ -5,8 +5,9 @@
   }
   
   .MainPage__Title  {
-    letter-spacing: 2px;
+    letter-spacing: 8px;
     font-weight: 300;
+    font-size: xx-large;
     text-transform: uppercase;
   }
   

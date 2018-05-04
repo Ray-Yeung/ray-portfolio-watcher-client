@@ -7,7 +7,8 @@ import StockList from './stockList';
 export class MainPage extends React.Component {
   render() {
     return (
-      <div>
+      <div className="MainPage">
+        <h1 className="MainPage__Title">Portfolio</h1>
         <AddStock />
         <StockList />
       </div>

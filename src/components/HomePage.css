@@ -1,0 +1,22 @@
+.Home {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  background-image: url("https://drive.google.com/file/d/1e6J36Rf9JU-yf_3L2KlBfYJ_Hi7IGdCN/view?usp=sharing");
+}
+
+.Home__Title {
+  letter-spacing: 8px;
+  font-weight: 300;
+  font-size: xx-large;
+  text-transform: uppercase;
+}
+
+.body {
+  background-image: 'url("http://gdurl.com/fG5N")';
+}
+
+@font-face {
+  font-family: 'Roboto', sans-serif;
+  src: url('https://fonts.googleapis.com/css?family=Roboto')
+}

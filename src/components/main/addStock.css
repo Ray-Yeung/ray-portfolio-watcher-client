@@ -52,7 +52,13 @@ button.AddStock__LogoutButton {
   height: 20px;
   margin-left: 5.0rem;
 }
-    
+
+input[type="text"] {
+  font-size: 15px;
+  font-family: sans-serif;
+  color: #373333;
+}
+
 @media only screen and (min-width: 600px) {
   .AddStock__Input {
     width: 65%;

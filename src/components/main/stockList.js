@@ -1,14 +1,14 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import './stockList.css';
-import { fetchStock, fetchLogo, removeStock } from '../../actions/stockActions';
+import { fetchStock, removeStock } from '../../actions/stockActions';
 import StockCard from './stockCard';
 
 export class StockList extends React.Component {
   componentDidUpdate() {
     if(this.props.userId && this.props.stocks.length <= 0) {
       this.props.dispatch(fetchStock(this.props.userId, this.props.authToken))
-      this.props.dispatch(fetchLogo(this.props.userId, this.props.authToken))
+      // this.props.dispatch(fetchLogo(this.props.userId, this.props.authToken))
       // const logo = this.props.dispatch(fetchLogo())
       // this.setState();
     } 

@@ -1,19 +1,46 @@
 .RegisterPage {
-    height: 50px;
-    margin-top: 2.5rem;
-    margin-bottom: 2.5rem;
+    /* width: 100vw;
+    height: 100vh; */
+    text-align: center;
   }
+
+.Username__Label {
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 15px;
+}
+
+.Password__Label {
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 15px;
+}
+
+.Register__Title {
+  letter-spacing: 8px;
+  font-weight: 300;
+  font-size: xx-large;
+  text-transform: uppercase;
+}
       
 .RegisterUsername__Input {
   outline: none;
-  width: 50%;
-  height: 35px;
+  width: 210px;
+  height: 20px;
+  text-align: center;
 }
 
 .RegisterPassword__Input {
   outline: none;
-  width: 50%;
-  height: 35px;
+  width: 210px;
+  height: 20px;
+  text-align: center;
+}
+
+input[type="text"] {
+  font-size: 15px;
+  font-family: sans-serif;
+  color: #373333;
 }
       
 button.Register__Button {
@@ -21,16 +48,21 @@ button.Register__Button {
   border: none;
   text-transform: uppercase;
   letter-spacing: 1px;
-    align-self: stretch;
+  align-self: stretch;
   background-color: #333;
-    color: #fff;
-  max-width: 200px;
+  color: #fff;
+  max-width: 170px;
   width: 25%;
-  height: 34px;
+  height: 28px;
 }
     
-@media only screen and (min-width: 600px) {
+/* @media only screen and (min-width: 600px) {
   .RegisterUsername__Input, .RegisterPassword__Input {
     width: 65%;
   }
+} */
+
+@font-face {
+  font-family: 'Roboto', sans-serif;
+  src: url('https://fonts.googleapis.com/css?family=Roboto')
 }
