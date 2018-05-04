@@ -14,7 +14,6 @@ class App extends React.Component {
     if(localStorage.getItem('authToken')) {
       const authToken = localStorage.getItem('authToken');
       const userId = localStorage.getItem('userId');
-
       this.props.dispatch(loginUserSuccess(userId, authToken))
     }
   }

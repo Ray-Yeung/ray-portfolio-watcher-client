@@ -2,7 +2,8 @@
   width: 100vw;
   height: 100vh;
   text-align: center;
-  background-image: url("https://drive.google.com/file/d/1e6J36Rf9JU-yf_3L2KlBfYJ_Hi7IGdCN/view?usp=sharing");
+  background-image: url("https://goo.gl/images/dqOLQ2");
+  /* background-color: green; */
 }
 
 .Home__Title {
@@ -14,6 +15,10 @@
 
 .body {
   background-image: 'url("http://gdurl.com/fG5N")';
+  background-size: cover;
+  border: 2px solid black;
+  height: 300px;
+  width: 300px;
 }
 
 @font-face {
