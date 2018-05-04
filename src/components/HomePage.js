@@ -10,6 +10,7 @@ export class HomePage extends React.Component {
         <Link to="/register">
             <button className="Register__Button" type="submit">Register</button>
         </Link>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <Link to="/login">
             <button className="Login__Button" type="submit">Login</button>
         </Link>

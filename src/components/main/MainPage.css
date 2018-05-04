@@ -1,17 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+ background-color: #010307;
+
+}
+
 .MainPage {
-    width: 100vw;
-    height: 100vh;
-    text-align: center;
-  }
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  background-image: url("https://doc-08-14-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/q75kajn557ifnm150o5btv6hirugv644/1525456800000/05629861215184963149/*/1bJV6oU_aBG6t-OHYjORLWs7Bva7igRZp");
+  background-size: cover;
+  background-attachment: fixed;
+  /* display: block; */
   
-  .MainPage__Title  {
-    letter-spacing: 8px;
-    font-weight: 300;
-    font-size: xx-large;
-    text-transform: uppercase;
-  }
+}
   
-  @font-face {
-    font-family: 'Roboto', sans-serif;
-    src: url('https://fonts.googleapis.com/css?family=Roboto')
-  }
+.MainPage__Title  {
+  letter-spacing: 8px;
+  font-weight: 300;
+  font-size: xx-large;
+  text-transform: uppercase;
+  line-height: 130px;
+}
+  
+@font-face {
+  font-family: 'Roboto', sans-serif;
+  src: url('https://fonts.googleapis.com/css?family=Roboto')
+}

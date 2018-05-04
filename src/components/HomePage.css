@@ -1,9 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .Home {
   width: 100vw;
   height: 100vh;
   text-align: center;
   background-image: url("https://interfacelift.com/wallpaper/7yz4ma1/03901_empirenights_2560x1440.jpg");
-  /* background-color: green; */
   background-size: cover;
 }
 
@@ -12,15 +16,17 @@
   font-weight: 300;
   font-size: xx-large;
   text-transform: uppercase;
+  line-height: 130px;
+  /* margin: 0;
+  padding: 0; */
 }
 
-.body {
-  /* background-image: 'url("")'; */
+/* .body {
   background-size: cover;
   border: 2px solid black;
   height: 300px;
   width: 300px;
-}
+} */
 
 @font-face {
   font-family: 'Roboto', sans-serif;

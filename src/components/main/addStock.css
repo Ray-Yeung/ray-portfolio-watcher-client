@@ -19,6 +19,8 @@
   width: 400px;
   height: 35px;
   text-align: center;
+  opacity: 0.82;
+  background-color: rgba(245, 245, 245, 1);
 }
     
 button.AddStock__Button {

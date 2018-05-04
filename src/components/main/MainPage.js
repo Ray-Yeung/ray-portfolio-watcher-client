@@ -12,7 +12,7 @@ export class MainPage extends React.Component {
         <h1 className="MainPage__Title">Portfolio</h1>
         <AddStock />
         <StockList />
-      </div>
+      </div> 
     );
   }
 };
