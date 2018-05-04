@@ -6,7 +6,7 @@ export class HomePage extends React.Component {
   render() {
     return (
       <div className="Home">
-        <h1 className="Home__Title">Welcome to your Stock Portfolio</h1>
+        <h1 className="Home__Title">Portfolio Watcher</h1>
         <Link to="/register">
             <button className="Register__Button" type="submit">Register</button>
         </Link>

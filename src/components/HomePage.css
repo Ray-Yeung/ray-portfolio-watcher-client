@@ -2,8 +2,9 @@
   width: 100vw;
   height: 100vh;
   text-align: center;
-  background-image: url("https://goo.gl/images/dqOLQ2");
+  background-image: url("https://interfacelift.com/wallpaper/7yz4ma1/03901_empirenights_2560x1440.jpg");
   /* background-color: green; */
+  background-size: cover;
 }
 
 .Home__Title {
@@ -14,7 +15,7 @@
 }
 
 .body {
-  background-image: 'url("http://gdurl.com/fG5N")';
+  /* background-image: 'url("")'; */
   background-size: cover;
   border: 2px solid black;
   height: 300px;
