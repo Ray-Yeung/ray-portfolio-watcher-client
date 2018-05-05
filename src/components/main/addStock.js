@@ -9,6 +9,7 @@ class AddStock extends React.Component {
   onSubmit(event) {
     event.preventDefault();
     const search = document.getElementById("AddStock").value;
+    // console.log(search);
     this.props.dispatch(fetchStockApi(search));
   }
 
@@ -26,8 +27,9 @@ class AddStock extends React.Component {
           <br/>
           <button
             className="AddStock__Button"
-            onClick={search => 
-              this.props.dispatch(fetchStockApi(search))}
+            type="submit"
+            // onClick={search => 
+            //   this.props.dispatch(fetchStockApi(search))}
               // this.props.dispatch(createStock(this.props.searchedStock, this.props.userId, this.props.authToken))
           >Add Stock To Portfolio</button> <br/>
           <br/>

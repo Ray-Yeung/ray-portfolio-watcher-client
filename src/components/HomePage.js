@@ -14,6 +14,14 @@ export class HomePage extends React.Component {
         <Link to="/login">
             <button className="Login__Button" type="submit">Login</button>
         </Link>
+        <br/>
+        <p className="Home__Text">
+          WELCOME TO PORTFOLIO WATCHER! <br/>
+          <br/>
+          Portfolio Watcher is designed to allow the user to keep <br/>
+          track of stocks displaying essential data for an investor <br/>
+          to efficiently obtain the information they need.
+        </p>
       </div>
     );
   }

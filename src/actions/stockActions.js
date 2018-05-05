@@ -76,6 +76,7 @@ export const fetchStock = (userId, authToken) => {
 };
 
 export const fetchStockApi = (company) => {
+  // console.log(typeof company);
   return(dispatch) => {
     fetch(`https://api.iextrading.com/1.0/stock/${company}/quote`, {
       method: 'GET',
