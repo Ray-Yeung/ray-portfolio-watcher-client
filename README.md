@@ -11,3 +11,4 @@ Here is a link to the deployed application: [Portfolio Watcher](https://portfoli
 ### Portfolio Dashboard:
 
 ![Portfolio Dashboard](https://user-images.githubusercontent.com/31050196/39660419-7c1e9674-4ff3-11e8-8ab2-6660e13413f0.png)
+
