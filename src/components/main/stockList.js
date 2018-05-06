@@ -32,7 +32,7 @@ export class StockList extends React.Component {
           latestPrice={stock.latestPrice}
           week52High={stock.week52High}
           week52Low={stock.week52Low}
-          peRatio={stock.peRatio}
+          // peRatio={stock.peRatio}
         />
         <button
           className="removeStock-button"

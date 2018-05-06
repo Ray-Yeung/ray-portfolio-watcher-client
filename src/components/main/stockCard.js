@@ -13,7 +13,7 @@ const StockCard = (stock) => {
       <div className="StockCard_LatestPrice"><span>Latest Price: </span>${stock.latestPrice.toFixed(2)}</div>
       <div className="StockCard_Week52High"><span>52 Week High: </span>${stock.week52High.toFixed(2)}</div>
       <div className="StockCard_Week52Low"><span>52 Week Low: </span>${stock.week52Low.toFixed(2)}</div>
-      <div className="StockCard_peRatio"><span>Price-Earnings Ratio: </span>${stock.peRatio.toFixed(2)}</div>
+      {/* <div className="StockCard_peRatio"><span>Price-Earnings Ratio: </span>${stock.peRatio.toFixed(2)}</div> */}
     </li>
   );
 };
